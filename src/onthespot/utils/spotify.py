@@ -216,11 +216,12 @@ def convert_audio_format(filename, quality):
             )
         subprocess.check_call(command, shell=False)
         if not config.get("keep_raw"):
+            logger.info(f"Deleting temp file '{temp_name}'")
             os.remove(temp_name)
         else:
             raw_filename = os.path.join(
-            target_path.parent, target_path.stem+".ogg"
-            )
+            target_path.parent, target_path.stem+".ogg")
+            logger.info(f"Keeping raw media file at '{raw_filename}'")
             os.rename(temp_name, raw_filename)
     else:
         raise FileNotFoundError
