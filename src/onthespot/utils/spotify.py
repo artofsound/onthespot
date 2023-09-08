@@ -215,7 +215,13 @@ def convert_audio_format(filename, quality):
             f'Converting media with ffmpeg. Built commandline {command}'
             )
         subprocess.check_call(command, shell=False)
-        os.remove(temp_name)
+        if not config.get("keep_raw"):
+            os.remove(temp_name)
+        else:
+            raw_filename = os.path.join(
+            target_path.parent, target_path.stem+".ogg"
+            )
+            os.rename(temp_name, raw_filename)
     else:
         raise FileNotFoundError
 

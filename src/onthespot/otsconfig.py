@@ -33,6 +33,7 @@ class Config:
             "media_format": "mp3", # Song track media format
             "podcast_media_format": "mp3", # Podcast track media format
             "force_raw": False, # Skip media conversion and metadata writing
+            "keep_raw": False, # Keep raw media files
             "force_premium": False, # Set premium flag to always return true
             "chunk_size": 50000, # Chunk size in bytes to download in
             "recoverable_fail_wait_delay": 10, # No of seconds to wait before failure that can be retried

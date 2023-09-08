@@ -442,6 +442,10 @@ class MainWindow(QMainWindow):
             self.inp_raw_download.setChecked(True)
         else:
             self.inp_raw_download.setChecked(False)
+        if config.get("keep_raw"):
+            self.inp_keep_raw.setChecked(True)
+        else:
+            self.inp_keep_raw.setChecked(False)
         if config.get("watch_bg_for_spotify"):
             self.inp_enable_spot_watch.setChecked(True)
         else:
@@ -504,6 +508,10 @@ class MainWindow(QMainWindow):
             config.set_('force_raw', True)
         else:
             config.set_('force_raw', False)
+        if self.inp_keep_raw.isChecked():
+            config.set_('keep_raw', True)
+        else:
+            config.set_('keep_raw', False)
         if self.inp_force_premium.isChecked():
             config.set_('force_premium', True)
         else:

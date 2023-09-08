@@ -870,6 +870,13 @@
                </widget>
               </item>
               <item>
+               <widget class="QCheckBox" name="inp_keep_raw">
+                <property name="text">
+                 <string>Keep raw media</string>
+                </property>
+               </widget>
+              </item>
+              <item>
                <widget class="QCheckBox" name="inp_force_premium">
                 <property name="text">
                  <string>Force premium</string>
