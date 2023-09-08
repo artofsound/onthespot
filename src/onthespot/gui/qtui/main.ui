@@ -870,6 +870,13 @@
                </widget>
               </item>
               <item>
+               <widget class="QCheckBox" name="inp_cover_to_file">
+                <property name="text">
+                 <string>Save cover image</string>
+                </property>
+               </widget>
+              </item>
+              <item>
                <widget class="QCheckBox" name="inp_force_premium">
                 <property name="text">
                  <string>Force premium</string>
@@ -1642,7 +1649,7 @@
                 </property>
                </widget>
               </item>
-             </layout>
+             </layout>keep
             </widget>
            </item>
            <item>

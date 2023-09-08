@@ -275,6 +275,17 @@ def set_music_thumbnail(filename, image_url):
     tags = music_tag.load_file(filename)
     tags['artwork'] = buf.read()
     tags.save()
+    if config.get("cover_to_file"):
+        save_music_thumbnail(filename, img)
+
+
+def save_music_thumbnail(filename, img):
+    target_path = Path(filename)
+    logger.info(f"Save thumbnail for audio media at '{target_path}'")
+    filename = os.path.join(
+            target_path.parent, "cover" + ".jpg")
+    if not os.path.isfile(filename):
+            img.save(filename)
 
 
 def search_by_term(session,
